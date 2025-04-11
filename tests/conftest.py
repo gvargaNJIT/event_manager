@@ -182,30 +182,34 @@ async def users_with_same_role_50_users(db_session):
 
 @pytest.fixture
 async def admin_user(db_session: AsyncSession):
-    user = User(
-        nickname="admin_user",
-        email="admin@example.com",
-        first_name="John",
-        last_name="Doe",
-        hashed_password="securepassword",
-        role=UserRole.ADMIN,
-        is_locked=False,
-    )
+    user_data = {
+        "nickname":"admin_user",
+        "email":"admin@example.com",
+        "first_name":"John",
+        "last_name":"Doe",
+        "hashed_password":hash_password("securepassword"),
+        "role": UserRole.ADMIN,
+        "email_verified": True,
+        "is_locked": False,
+    }
+    user = User(**user_data)
     db_session.add(user)
     await db_session.commit()
     return user
 
 @pytest.fixture
 async def manager_user(db_session: AsyncSession):
-    user = User(
-        nickname="manager_john",
-        first_name="John",
-        last_name="Doe",
-        email="manager_user@example.com",
-        hashed_password="securepassword",
-        role=UserRole.MANAGER,
-        is_locked=False,
-    )
+    user_data = {
+        "nickname":"manager_john",
+        "first_name":"John",
+        "last_name":"Doe",
+        "email":"manager_user@example.com",
+        "hashed_password":hash_password("securepassword"),
+        "role":UserRole.MANAGER,
+        "email_verified": True,
+        "is_locked":False,
+    }
+    user = User(**user_data)
     db_session.add(user)
     await db_session.commit()
     return user
