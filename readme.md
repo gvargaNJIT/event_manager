@@ -1,3 +1,16 @@
+# Assignment for Event Manager Project by Grace Varga
+## I forked and cloned this repository to fix and debug. Below are the five issues I found:
+
+1. I originally ran pytest to see 12 errors appeared and 8 failures. I started with the errors which involved login access to a user, admin and manager. The [test_users_api.py](tests/test_api/test_users_api.py) was where the errors appeared as there was nothing defined to be user_token, admin token, and manager_token which I added appropriately to the file.
+
+2. Errors went away for the user_token tests but not the admin_token and manager_token. To fix this, I went into the [conftest.py](tests/conftest.py) file and mimicked the style and formatting of the verified_user to the admin_user and manager_user and that fixed the errors. Now onto the failed tests next.
+
+3. 
+
+
+
+
+
 # Event Manager Company: Software QA Analyst/Developer Onboarding Assignment
 
 Welcome to the Event Manager Company! As a newly hired Software QA Analyst/Developer and a student in software engineering, you are embarking on an exciting journey to contribute to our project aimed at developing a secure, robust REST API that supports JWT token-based OAuth2 authentication. This API serves as the backbone of our user management system and will eventually expand to include features for event management and registration.
