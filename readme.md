@@ -5,7 +5,7 @@
 
 2. Errors went away for the user_token tests but not the admin_token and manager_token. To fix this, I went into the [conftest.py](tests/conftest.py) file and mimicked the style and formatting of the verified_user to the admin_user and manager_user and that fixed the errors. Now onto the failed tests next.
 
-3. 
+3. One test failed in [test_email.py](tests/test_email.py). This was trying to connect to a real SMTP server and getting disconnected. I used a mock server to fix this issue.
 
 
 
