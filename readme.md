@@ -11,7 +11,7 @@
 
 5. Two tests failed in [test_user_service.py](tests/test_services/test_user_service.py) which were similar to the problems in Issue 3 where the emails were trying to be sent to a real server. I then used the mocker server to simulate the register and create user for the email, since those were the tests that were failing. Issue is [here](https://github.com/gvargaNJIT/event_manager/issues/5)
 
-
+6. From Professor's video: I needed to fix some code to have it work for user. Issue is [here](https://github.com/gvargaNJIT/event_manager/issues/6)
 
 # Everything after this point is from my professor:
 
