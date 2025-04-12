@@ -7,6 +7,8 @@
 
 3. One test failed in [test_email.py](tests/test_email.py). This was trying to connect to a real SMTP server and getting disconnected. I used a mock server to fix this issue.
 
+4. Five tests were failing in [test_user_schemas.py](tests/test_schemas/test_user_schemas.py) and the big cause was missing data or mislabeled data. For two tests, they needed the [conftest.py](tests/conftest.py) file's user_base_data to have a nickname passed through but that wasn't there. And another needed an email when the input was labeled username. I also had to use uuid for the unique user id in the test_user_response_valid test.
+
 
 
 
